@@ -1,0 +1,30 @@
+digraph G {
+	graph [nodesep = 0.5];
+
+	subgraph cluster_0 {
+		node [style=filled, colorscheme=piyg9, color=3 ];
+		説明;
+		ユーザー登録;
+		クレカ登録;
+		説明 -> ユーザー登録 -> クレカ登録;
+		label = "初回起動時";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled, colorscheme=piyg9, color=7];
+		バーコードスキャン -> 商品確認 [label = "読み取り" ]
+		商品確認 -> 商品追加 [label = "Yes"];
+		商品確認 -> バーコードスキャン [label = "No"]
+		商品追加 -> "全商品確認\n+\n決済確認" [label = "購入完了"];
+		商品追加 -> バーコードスキャン [label = "continue"];
+		label = "2回目以降";
+	}
+	アプリ起動 -> 説明;
+	アプリ起動 -> バーコードスキャン;
+	クレカ登録 -> バーコードスキャン;
+	"全商品確認\n+\n決済確認" -> 購入完了 [label = "Yes"];
+	"全商品確認\n+\n決済確認" -> バーコードスキャン [label = "No"];
+
+	アプリ起動 [shape=Mdiamond];
+	購入完了 [shape=Msquare];
+}
