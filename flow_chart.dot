@@ -13,13 +13,13 @@ digraph G {
 		node [style=filled, colorscheme=piyg9, color=7];
 		バーコードスキャン -> 商品確認 [label = "読み取り(popup)" ]
 		商品確認 -> バーコードスキャン [label = "popdown"]
-		バーコードスキャン -> "全商品確認\n+\n決済確認" [label = "商品確認"];
+		バーコードスキャン -> "全商品確認\n+\n決済確定ボタン" [label = "商品確認"];
 	}
 	アプリ起動 -> 説明;
 	アプリ起動 -> バーコードスキャン [label = "2回目以降";] ;
 	クレカ登録 -> バーコードスキャン;
-	"全商品確認\n+\n決済確認" -> 購入完了 [label = "決済確定"];
-	"全商品確認\n+\n決済確認" -> バーコードスキャン [label = "continue"];
+	"全商品確認\n+\n決済確定ボタン" -> 購入完了 [label = "決済確定"];
+	"全商品確認\n+\n決済確定ボタン" -> バーコードスキャン [label = "continue"];
 
 	アプリ起動 [shape=Mdiamond];
 	購入完了 [shape=Msquare];
