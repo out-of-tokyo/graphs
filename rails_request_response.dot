@@ -1,0 +1,22 @@
+digraph G {
+   graph [size = "14, 11"];
+   graph [nodesep = 0.7];
+   node [ height = 0.01,
+         fontname = "Helvetica", fontsize = 14];
+
+   iPhone;
+   POS;
+
+   iPhone -> "Server(Rails)" [label = "①GET \n 商品一覧"];
+   "Server(Rails)" -> POS [label = "②GET \n商品一覧"];
+   POS -> "Server(Rails)" [label = "③商品一覧"]
+   "Server(Rails)" -> iPhone [label = "④商品一覧"];
+   iPhone -> "Server(Rails)" [label = "⑤POST 購入\n(商品リスト,決済トークン)"];
+   "Server(Rails)" -> POS [label = "⑥POST 購入"]
+   POS -> "Server(Rails)" [label = "⑦購入完了"]
+   "Server(Rails)" -> WebPay [label = "⑧決済"]
+   WebPay -> "Server(Rails)" [label = "⑨決済完了"]
+   "Server(Rails)" -> iPhone [label = "⑩決済完了通知"]
+   WebPay -> iPhone [label = "決済トークン"];
+   iPhone -> WebPay [label = "トークン生成"];
+}
