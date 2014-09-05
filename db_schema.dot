@@ -10,7 +10,7 @@ digraph G {
    subgraph cluster_0 {
       label = "POS"
       Store [label = "{Store|id\nname\nlatitude\nlongitude\nbeacon_id}"];
-      Product [label = "{Product|id\nname\nbarcode_number}"];
+      Product [label = "{Product|id\nname\ncategory\nbarcode_id}"];
       Product_Store [label = "{Product_Store|price}"];
    }
 
