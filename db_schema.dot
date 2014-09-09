@@ -4,14 +4,14 @@ digraph G {
    node [shape = record, height = 0.01,
          fontname = "Helvetica", fontsize = 14];
 
-   User [label = "{User|id\nname\ncreated_at}"];
-   Purchase [label = "{Purchase|id\npayment\ncreated_at}"];
+   User [label = "{User|id\nname: string\ncreated_at}"];
+   Purchase [label = "{Purchase|id\npayment: integer\nuser_id: integer\ncreated_at}"];
 
    subgraph cluster_0 {
       label = "POS"
-      Store [label = "{Store|id\nname\nlatitude\nlongitude\nbeacon_id}"];
-      Product [label = "{Product|id\nname\ncategory\nbarcode_id}"];
-      Product_Store [label = "{Product_Store|price}"];
+      Store [label = "{Store|id\nname: string\nlatitude: decimal\nlongitude: decimal\nbeacon_id: string}"];
+      Product [label = "{Product|id\nname:string\ncategory: enum\nbarcode_id: bigint}"];
+      Product_Store [label = "{Product_Store|price: integer\namount: integer}"];
    }
 
    subgraph cluster_1 {
