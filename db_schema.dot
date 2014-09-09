@@ -11,7 +11,7 @@ digraph G {
       label = "POS"
       Store [label = "{Store|id\nname: string\nlatitude: decimal\nlongitude: decimal\nbeacon_id: string}"];
       Product [label = "{Product|id\nname:string\ncategory: enum\nbarcode_id: bigint}"];
-      Product_Store [label = "{Product_Store|price: integer\namount: integer}"];
+      Product_Store [label = "{Product_Store|price: integer\nstock: integer}"];
    }
 
    subgraph cluster_1 {
