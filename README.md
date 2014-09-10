@@ -10,4 +10,4 @@ graphs
 ![](http://gyazo.l0o0l.co/img/2014-09-05/434ee89655610fba2c966de92bc4b577.png)
 
 ## データベース設計 (db_schema.dot)
-![](http://gyazo.l0o0l.co/img/2014-09-09/39fda2e73185d288c7fbd9cdc296a6e2.png)
+![](http://gyazo.l0o0l.co/img/2014-09-10/63290823e54a5c246bc2867f11634033.png)
