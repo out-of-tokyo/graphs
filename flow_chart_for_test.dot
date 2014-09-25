@@ -1,0 +1,27 @@
+digraph G {
+	rankdir = LR;
+	graph [nodesep = 0.5;ranksep=2];
+
+	subgraph cluster_0 {
+		アプリ起動 [shape=doublecircle,colorscheme=piyg9, color=3, style=filled ];
+		node [shape=circle, colorscheme=piyg9, color=7, style=filled];
+		アプリ起動 -> ViewController;
+		ViewController -> ViewController [label="subindex"];
+		ViewController -> ViewController [label="addindex"];
+		ViewController -> ViewController [label="subcount"];
+		ViewController -> ViewController [label="addcount"];
+		ViewController -> ViewController [label="setScanedProduct",];
+		ViewController -> ViewController [label="setScanedProduct",];
+
+		ViewController -> PurchaseViewController [label = "gotoctv"];
+		PurchaseViewController -> ViewController [label = "gotoscan"];
+		PurchaseViewController -> QRcodeViewController [label = "createQRcode"]
+		PurchaseViewController -> PurchaseViewController[label="subcount"];
+		PurchaseViewController -> PurchaseViewController[label="addcount"];
+		QRcodeViewController [shape=doublecircle];
+
+
+		PurchaseViewController -> CardViewController [label="初回時"];
+		CardViewController -> PurchaseViewController;
+	}
+}
